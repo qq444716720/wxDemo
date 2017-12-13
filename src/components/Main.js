@@ -36,6 +36,17 @@ class AppComponent extends React.Component {
 		        banners: json.banners
 		    });
 		});
+		var top = this.refs.routeName.offsetTop; // 记录临界点
+		window.addEventListener('scroll',()=>{
+			var tabHeader = this.refs.tabHeader;
+			var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			if(scrollTop < top){ // 还原
+				tabHeader.style.position = 'relative';
+			}else if(scrollTop > top){ // 浮动
+				tabHeader.style.top = '0px';
+				tabHeader.style.position = 'fixed';
+			}
+		});
 
     }
 
@@ -101,12 +112,12 @@ class AppComponent extends React.Component {
 	            	</div>
 	            	<Timing time={this.state.time} />
 	            </div>
-	            <div className="route-name">
+	            <div ref="routeName" className="route-name">
 	            	<span>318川藏线+稻城亚丁+青藏线环藏18日自驾游</span>
 	            </div>
 
-	            <div ref className="menu-containeer">
-	            	<ul>
+	            <div className="menu-containeer">
+	            	<ul ref='tabHeader'>
 	            		{tabList}
 	            	</ul>
 	            </div>

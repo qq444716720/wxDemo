@@ -4,16 +4,15 @@ require('styles/App.css');
 import React from 'react';
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
-
+import Timing from './Timing.js'
 
 let clockImage = require('../images/time_20171205143720.png');
 let kefuImage = require('../images/kefu_20171205143725.png');
 
 class AppComponent extends React.Component {
 
-    constructor(props) {
-
-        super(props);
+    constructor() {
+        super();
         this.state = {
            current: '1',
            banners: [],
@@ -23,10 +22,7 @@ class AppComponent extends React.Component {
                 {tabName: '购买须知',id: 3}
            ],
            currentIndex: 1,
-           time: '2017-12-13 00:00:00',
-           hours: '00',
-           minutes: '00',
-           seconds: '00'
+           time: '2017-12-20 18:23:00',
         }
 
     }
@@ -41,36 +37,6 @@ class AppComponent extends React.Component {
 		    });
 		});
 
-
-		/**
-		* 倒计时
-		*/
-	    this.timer = setInterval(function(){
-            var leftTime = (new Date(this.state.time)) - (new Date()); //计算剩余的毫秒数
-            if(leftTime <= 0){
-	            clearTimeout(this.timer);
-	            return;
-	        }
-
-		    // var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-		    var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);
-		    if(hours < 10){
-		    	hours = '0'+hours;
-		    }
-		    var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);
-		    if(minutes < 10){
-		    	minutes = '0'+minutes;
-		    }
-		    var seconds = parseInt(leftTime / 1000 % 60, 10);
-		    if(seconds < 10){
-		    	seconds = '0'+seconds;
-		    }
-	        this.setState({
-	            hours: hours,
-	            minutes: minutes,
-	            seconds: seconds
-	        });
-        }.bind(this), 100);
     }
 
     /**
@@ -78,15 +44,12 @@ class AppComponent extends React.Component {
     */
     handleActive(id){
     	this.setState({
-            currentIndex:id
+            currentIndex: id
         });
     }
 
 
-
-
     render() {
-
 
     	// 循环tab
     	var _this=this;
@@ -99,7 +62,7 @@ class AppComponent extends React.Component {
         const settings = {
     		dots: true,
     		infinite: true,
-    		autoplaySpeed: 500,
+    		autoplaySpeed: 2000,
     		slidesToShow: 1,
     		autoplay: true
     	}
@@ -136,20 +99,13 @@ class AppComponent extends React.Component {
 	            			</div>
             			</div>
 	            	</div>
-	            	<div className="time-container">
-	            		<span className="prompt">离结束:</span>
-	            		<span className="hour">{this.state.hours}</span>
-	            		<span className="mark">:</span>
-	            		<span className="minute">{this.state.minutes}</span>
-	            		<span className="mark">:</span>
-	            		<span className="second">{this.state.seconds}</span>
-	            	</div>
+	            	<Timing time={this.state.time} />
 	            </div>
 	            <div className="route-name">
 	            	<span>318川藏线+稻城亚丁+青藏线环藏18日自驾游</span>
 	            </div>
 
-	            <div className="menu-containeer">
+	            <div ref className="menu-containeer">
 	            	<ul>
 	            		{tabList}
 	            	</ul>

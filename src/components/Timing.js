@@ -55,7 +55,7 @@ class Timing extends React.Component {
     render() {
 
         return (
-        	<div className="clock-box">
+        	<div className="time-container">
         		<span className="prompt">离结束:</span>
         		<span className="days">{this.state.days}</span>天
         		<span className="hour">{this.state.hours}</span>

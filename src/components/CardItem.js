@@ -40,9 +40,9 @@ class CardItem extends React.Component {
 						<img src={
 									this.state.timeoutFlg
 									?
-									this.state.rightImage
+									rightImage
 									:
-									this.state.endrightImage
+									endrightImage
 								} alt=""/>
 					</div>
 					<div className={styles['card-price']}>

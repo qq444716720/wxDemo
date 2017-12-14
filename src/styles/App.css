@@ -6,9 +6,7 @@
 body {
   background: #F2F2F2;
 }
-i{
-  font-style: normal;
-}
+
 .swiper img{
   height: 150px;
   width: 100%;
@@ -46,9 +44,9 @@ i{
 }
 
 .clock-box{
+  text-align: center;
   color: #FEAA34;
   font-size: 12px;
-  text-align: center;
 }
 
 .days,.hour,.minute,.second{
@@ -204,6 +202,7 @@ i{
   color: #fff;
   background: #6ADADB;
 }
+
 /* 首页css */
 .topimg{
   width:100%;
@@ -321,3 +320,4 @@ i{
   height: 100%;
   border-radius: 10px;
 }
+

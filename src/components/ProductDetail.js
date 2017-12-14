@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'antd';
+import { Carousel, Affix } from 'antd';
 import 'antd/dist/antd.css';
 import Timing from './Timing.js'
 
@@ -13,11 +13,6 @@ class ProductDetail extends React.Component {
         this.state = {
            current: '1',
            banners: [],
-           tabs:[
-                {tabName: '线路说明',id: 1},
-                {tabName: '费用说明',id: 2},
-                {tabName: '购买须知',id: 3}
-           ],
            currentIndex: 1,
            time: '2017-12-20 18:23:00',
            timeoutFlg: true
@@ -34,18 +29,6 @@ class ProductDetail extends React.Component {
 		        banners: json.banners
 		    });
 		});
-		var top = this.refs.routeName.offsetTop; // 记录临界点
-		window.addEventListener('scroll',()=>{
-			var tabHeader = this.refs.tabHeader;
-			var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-			if(scrollTop < top){ // 还原
-				tabHeader.style.position = 'relative';
-			}else if(scrollTop > top){ // 浮动
-				tabHeader.style.top = '0px';
-				tabHeader.style.position = 'fixed';
-			}
-		});
-
     }
 
     /**
@@ -65,14 +48,6 @@ class ProductDetail extends React.Component {
 
 
     render() {
-
-    	// 循环tab
-    	var _this=this;
-        var tabList = this.state.tabs.map(function(val,index) {
-            var tabStyle = val.id == this.state.currentIndex ? 'active' : '';
-            var node = '#d' + val.id;
-            return <a key={index} onClick={this.handleActive.bind(_this,val.id)} href={node}><li className={tabStyle}>{val.tabName}</li></a>
-        }.bind(_this));
 
         const settings = {
     		dots: true,
@@ -118,14 +93,24 @@ class ProductDetail extends React.Component {
 	            		<Timing handleTime={this.handleTime.bind(this)} time={this.state.time} />
 	            	</div>
 	            </div>
-	            <div ref="routeName" className="route-name">
+	            <div className="route-name">
 	            	<span>318川藏线+稻城亚丁+青藏线环藏18日自驾游</span>
 	            </div>
 
 	            <div className="menu-containeer">
-	            	<ul ref='tabHeader'>
-	            		{tabList}
-	            	</ul>
+	            	<Affix>
+		            	<ul>
+		            		<a onClick={this.handleActive.bind(this, 1)} href="#d1">
+	            		 		<li className={this.state.currentIndex == '1' ? 'active' : ''}>线路说明</li>
+            		 		</a>
+		            		<a onClick={this.handleActive.bind(this, 2)} href="#d2">
+		            			<li className={this.state.currentIndex == '2' ? 'active' : ''}>费用说明</li>
+	            			</a>
+		            		<a onClick={this.handleActive.bind(this, 3)} href="#d3">
+		            			<li className={this.state.currentIndex == '3' ? 'active' : ''}>购买须知</li>
+	            			</a>
+		            	</ul>
+	            	</Affix>
 	            </div>
 	            <div className="content">
 	            	<div className="description" id="d1">

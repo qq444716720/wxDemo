@@ -13,6 +13,7 @@ class Timing extends React.Component {
 
     }
 
+
     componentDidMount() {
 
 		/**
@@ -21,6 +22,7 @@ class Timing extends React.Component {
 	    this.timer = setInterval(function(){
             var leftTime = (new Date(this.props.time)) - (new Date()); //计算剩余的毫秒数
             if(leftTime <= 0){
+                this.props.handleTime();
 	            clearTimeout(this.timer);
 	            return;
 	        }

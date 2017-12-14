@@ -321,3 +321,6 @@ body {
   border-radius: 10px;
 }
 
+.timeoutBut{
+  background: #8c877e !important;
+}

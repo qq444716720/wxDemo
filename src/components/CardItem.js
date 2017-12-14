@@ -4,12 +4,18 @@ import Timing from './Timing.js';
 
 
 let rightImage = require('../images/right.png');
+let endrightImage = require('../images/endright.png');
 
 
 class CardItem extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+        	rightImage: rightImage,
+        	linkButton: <Link to='detail'><button>去秒杀</button></Link>,
+        	stock: <div className="bar-used"></div>
+        }
     }
 
 
@@ -17,6 +23,13 @@ class CardItem extends React.Component {
 
     }
 
+    handleTime() {
+    	this.setState({
+        	rightImage: endrightImage,
+        	linkButton: <button className='timeoutBut'>已结束</button>,
+        	stock: ''
+        });
+    }
 
     render() {
         return (
@@ -27,22 +40,22 @@ class CardItem extends React.Component {
 						<span><i>4</i>日游</span>
 					</div>
 					<div className="card-right">
-						<img src={rightImage} alt=""/>
+						<img src={this.state.rightImage} alt=""/>
 					</div>
 					<div className="card-price">
 						<s>原价：￥2265</s>
 						<span>限时抢购：￥2980</span>
 					</div>
 					<div className="card-btn">
-				      	<Link to='detail'><button>去秒杀</button></Link>
+						{this.state.linkButton}
 						<div className="card-stock">
 							<span>仅剩42份:</span>
 							<div className="bar">
-								<div className="bar-used"></div>
+								{this.state.stock}
 							</div>
 						</div>
 						<div className="card-time">
-							<Timing time="2017-12-18 00:00:00" />
+							<Timing handleTime={this.handleTime.bind(this)} time={this.props.time} />
 						</div>
 					</div>
             	</div>

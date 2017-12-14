@@ -19,7 +19,8 @@ class ProductDetail extends React.Component {
                 {tabName: '购买须知',id: 3}
            ],
            currentIndex: 1,
-           time: '2017-12-20 18:23:00'
+           time: '2017-12-20 18:23:00',
+           linkButton: <div className="right">立即购买</div>
         }
 
     }
@@ -53,6 +54,12 @@ class ProductDetail extends React.Component {
     handleActive(id){
     	this.setState({
             currentIndex: id
+        });
+    }
+
+    handleTime() {
+    	this.setState({
+        	linkButton: <div className='right timeoutBut'>已结束</div>,
         });
     }
 
@@ -108,7 +115,7 @@ class ProductDetail extends React.Component {
             			</div>
 	            	</div>
 	            	<div className="time-container">
-	            		<Timing time={this.state.time} />
+	            		<Timing handleTime={this.handleTime.bind(this)} time={this.state.time} />
 	            	</div>
 	            </div>
 	            <div ref="routeName" className="route-name">
@@ -157,7 +164,7 @@ class ProductDetail extends React.Component {
 	            		<div><img src={kefuImage} alt=""/></div>
 	            		<div><span>咨询</span></div>
 	            	</div>
-	            	<div className="right">立即购买</div>
+	            	{this.state.linkButton}
 	            </div>
       		</div>
         );

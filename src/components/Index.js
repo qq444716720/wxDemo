@@ -25,9 +25,9 @@ class Index extends React.Component {
 
 	        	{/* card S*/}
 	            <div className="card">
-					<CardItem />
-					<CardItem />
-					<CardItem />
+					<CardItem time="2017-12-14 10:00:00"/>
+					<CardItem time="2017-12-15 00:00:00" />
+					<CardItem time="2017-12-18 00:00:00" />
 	            </div>
 	            {/* card E*/}
       		</div>

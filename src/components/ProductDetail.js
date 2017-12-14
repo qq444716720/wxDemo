@@ -19,7 +19,7 @@ class ProductDetail extends React.Component {
                 {tabName: '购买须知',id: 3}
            ],
            currentIndex: 1,
-           time: '2017-12-20 18:23:00',
+           time: '2017-12-20 18:23:00'
         }
 
     }

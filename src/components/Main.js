@@ -2,48 +2,23 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-import CardItem from './CardItem.js'
-
-
-let weekImage = require('../images/week.png');
-let clockImage = require('../images/time_20171205143720.png');
-let rightImage = require('../images/right.png');
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Index from './Index.js';
+import ProductDetail from './ProductDetail.js';
 
 
 class AppComponent extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-           
-        }
 
-    }
-
-
-    componentDidMount() {
-		
-    }
-
-    
     render() {
         return (
-            <div>
-	            {/* top img S*/}
-	            <div className="topimg">
-	            	<img src={weekImage} />
-	            </div>
-	            {/* top img E*/}
-
-	        	{/* card S*/}
-	            <div className="card">
-					<CardItem />
-					<CardItem />
-					<CardItem />
-	            </div>
-	            {/* card E*/}
-      		</div>
-        );
+            <Router>
+            	<div>
+            		<Route exact path="/" component={Index} />
+            		<Route path="/detail" component={ProductDetail} />
+            	</div>
+            </Router>
+        )
     }
 }
 

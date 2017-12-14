@@ -1,8 +1,4 @@
-require('normalize.css/normalize.css');
-
-
 import React from 'react';
-
 
 class Timing extends React.Component {
 
@@ -51,6 +47,9 @@ class Timing extends React.Component {
         }.bind(this), 100);
     }
 
+    componentWillUnmount(){
+        clearTimeout(this.timer);
+    }
 
     render() {
 

@@ -1,13 +1,8 @@
-require('normalize.css/normalize.css');
-
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Timing from './Timing.js';
-import ProductDetail from './ProductDetail.js';
-import { Router, Route, hashHistory } from 'react-router';
 
 
-let weekImage = require('../images/week.png');
-let clockImage = require('../images/time_20171205143720.png');
 let rightImage = require('../images/right.png');
 
 
@@ -19,10 +14,10 @@ class CardItem extends React.Component {
 
 
     componentDidMount() {
-		
+
     }
 
-    
+
     render() {
         return (
             <div>
@@ -39,10 +34,7 @@ class CardItem extends React.Component {
 						<span>限时抢购：￥2980</span>
 					</div>
 					<div className="card-btn">
-					
-					    <Router history={hashHistory}>
-					      <Route path="/ProductDetail"><button>去秒杀</button></Route>
-					    </Router>
+				      	<Link to='detail'><button>去秒杀</button></Link>
 						<div className="card-stock">
 							<span>仅剩42份:</span>
 							<div className="bar">

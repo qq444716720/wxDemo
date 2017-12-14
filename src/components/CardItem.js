@@ -12,9 +12,7 @@ class CardItem extends React.Component {
     constructor() {
         super();
         this.state = {
-        	rightImage: rightImage,
-        	linkButton: <Link to='detail'><button>去秒杀</button></Link>,
-        	stock: <div className="bar-used"></div>
+        	timeoutFlg: true
         }
     }
 
@@ -25,9 +23,7 @@ class CardItem extends React.Component {
 
     handleTime() {
     	this.setState({
-        	rightImage: endrightImage,
-        	linkButton: <button className='timeoutBut'>已结束</button>,
-        	stock: ''
+    		timeoutFlg: false
         });
     }
 
@@ -40,18 +36,36 @@ class CardItem extends React.Component {
 						<span><i>4</i>日游</span>
 					</div>
 					<div className="card-right">
-						<img src={this.state.rightImage} alt=""/>
+						<img src={
+									this.state.timeoutFlg
+									?
+									this.state.rightImage
+									:
+									this.state.endrightImage
+								} alt=""/>
 					</div>
 					<div className="card-price">
 						<s>原价：￥2265</s>
 						<span>限时抢购：￥2980</span>
 					</div>
 					<div className="card-btn">
-						{this.state.linkButton}
+						{
+							this.state.timeoutFlg
+							?
+							<Link to='detail'><button>去秒杀</button></Link>
+							:
+							<button className='timeoutBut'>已结束</button>
+						}
 						<div className="card-stock">
 							<span>仅剩42份:</span>
 							<div className="bar">
-								{this.state.stock}
+								{
+									this.state.timeoutFlg
+									?
+									<div className="bar-used"></div>
+									:
+									''
+								}
 							</div>
 						</div>
 						<div className="card-time">

@@ -20,7 +20,7 @@ class ProductDetail extends React.Component {
            ],
            currentIndex: 1,
            time: '2017-12-20 18:23:00',
-           linkButton: <div className="right">立即购买</div>
+           timeoutFlg: true
         }
 
     }
@@ -59,7 +59,7 @@ class ProductDetail extends React.Component {
 
     handleTime() {
     	this.setState({
-        	linkButton: <div className='right timeoutBut'>已结束</div>,
+    		timeoutFlg: false
         });
     }
 
@@ -164,7 +164,13 @@ class ProductDetail extends React.Component {
 	            		<div><img src={kefuImage} alt=""/></div>
 	            		<div><span>咨询</span></div>
 	            	</div>
-	            	{this.state.linkButton}
+	            	{
+	            		this.state.timeoutFlg
+            			?
+            			<div className="right">立即购买</div>
+            			:
+            			<div className='right timeoutBut'>已结束</div>
+            		}
 	            </div>
       		</div>
         );

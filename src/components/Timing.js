@@ -1,6 +1,6 @@
 import React from 'react';
 
-var styles = require('styles/Timing.css');
+require('styles/Timing.css');
 
 class Timing extends React.Component {
 
@@ -58,14 +58,14 @@ class Timing extends React.Component {
     render() {
 
         return (
-        	<div className={styles['clock-box']}>
-        		<span className={styles.prompt}>离结束:</span>
-        		<span className={styles.days}>{this.state.days}</span>天
-        		<span className={styles.hour}>{this.state.hours}</span>
-        		<span className={styles.mark}>:</span>
-        		<span className={styles.minute}>{this.state.minutes}</span>
-        		<span className={styles.mark}>:</span>
-        		<span className={styles.second}>{this.state.seconds}</span>
+        	<div className="clock-box">
+        		<span className="prompt">离结束:</span>
+        		<span className="days">{this.state.days}</span>天
+        		<span className="hour">{this.state.hours}</span>
+        		<span className="mark">:</span>
+        		<span className="minute">{this.state.minutes}</span>
+        		<span className="mark">:</span>
+        		<span className="second">{this.state.seconds}</span>
         	</div>
         );
     }

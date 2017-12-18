@@ -155,7 +155,7 @@ class ProductDetail extends React.Component {
             			?
             			<div className="right">立即购买</div>
             			:
-            			<div className="timeoutBut">已结束</div>
+            			<div className="timeoutBuy">已结束</div>
             		}
 	            </div>
       		</div>

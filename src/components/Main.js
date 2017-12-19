@@ -10,10 +10,10 @@ class AppComponent extends React.Component {
     render() {
         return (
             <Router>
-            	<div>
-            		<Route exact path="/" component={Index} />
-            		<Route path="/detail" component={ProductDetail} />
-            	</div>
+                <div>
+                    <Route exact path="/" component={Index} />
+                    <Route path="/detail" component={ProductDetail} />
+                </div>
             </Router>
         )
     }

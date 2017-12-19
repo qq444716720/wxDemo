@@ -9,28 +9,28 @@ let endrightImage = require('../images/endright.png');
 
 class CardItem extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-        	timeoutFlg: true
-        }
-    }
+	constructor() {
+		super();
+		this.state = {
+			timeoutFlg: true
+		}
+	}
 
 
-    componentDidMount() {
+	componentDidMount() {
 
-    }
+	}
 
-    handleTime() {
-    	this.setState({
-    		timeoutFlg: false
-        });
-    }
+	handleTime() {
+		this.setState({
+			timeoutFlg: false
+		});
+	}
 
-    render() {
+	render() {
 
-        return (
-            <div>
+		return (
+			<div>
 				<div className="card-item">
 					<div className="card-title">
 						<span>武汉武汉武汉武汉武汉武汉汉</span>
@@ -38,12 +38,12 @@ class CardItem extends React.Component {
 					</div>
 					<div className="card-right">
 						<img src={
-									this.state.timeoutFlg
-									?
-									rightImage
-									:
-									endrightImage
-								} alt=""/>
+							this.state.timeoutFlg
+								?
+								rightImage
+								:
+								endrightImage
+						} alt="" />
 					</div>
 					<div className="card-price">
 						<s>原价：￥2265</s>
@@ -52,20 +52,20 @@ class CardItem extends React.Component {
 					<div className="card-btn">
 						{
 							this.state.timeoutFlg
-							?
-							<Link to='detail'><button>去秒杀</button></Link>
-							:
-							<button className="timeoutBut">已结束</button>
+								?
+								<Link to='detail'><button>去秒杀</button></Link>
+								:
+								<button className="timeoutBut">已结束</button>
 						}
 						<div className="card-stock">
 							<span>仅剩42份:</span>
 							<div className="bar">
 								{
 									this.state.timeoutFlg
-									?
-									<div className="bar-used"></div>
-									:
-									''
+										?
+										<div className="bar-used"></div>
+										:
+										''
 								}
 							</div>
 						</div>
@@ -73,10 +73,10 @@ class CardItem extends React.Component {
 							<Timing handleTime={this.handleTime.bind(this)} time={this.props.time} />
 						</div>
 					</div>
-            	</div>
-      		</div>
-        );
-    }
+				</div>
+			</div>
+		);
+	}
 }
 
 CardItem.defaultProps = {

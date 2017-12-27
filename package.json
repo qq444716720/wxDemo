@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "antd": "^3.0.1",
+    "antd-mobile": "^2.1.2",
     "core-js": "^2.0.0",
     "css-loader": "^0.23.1",
     "less": "^2.7.3",

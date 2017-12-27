@@ -13,7 +13,7 @@ class Index extends React.Component {
 		super();
 		this.state = {
 			list: [],
-			count: 30,
+			count: 3,
 			hasMore: 0,
 			initializing: 1,
 			refreshedAt: Date.now()

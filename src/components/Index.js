@@ -1,7 +1,7 @@
 import React from 'react';
 import CardItem from './CardItem.js';
-import ReactPullToRefresh from 'react-pull-to-refresh';
 import Tloader from 'react-touch-loader';
+import QueueAnim from 'rc-queue-anim';
 require('styles/Index.css');
 
 let weekImage = require('../images/week.png');
@@ -13,7 +13,7 @@ class Index extends React.Component {
 		super();
 		this.state = {
 			list: [],
-			count: 3,
+			count: 30,
 			hasMore: 0,
 			initializing: 1,
 			refreshedAt: Date.now()
@@ -29,14 +29,6 @@ class Index extends React.Component {
 		}, 2e3);
 	}
 
-	handleRefresh(resolve) {
-		var myFetchOptions = {
-			method: 'GET'
-		};
-		fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=yule' + '&count=20', myFetchOptions).then(response => response.json()).then(json => {
-			resolve();
-		});
-	}
 
 	loadMore(resolve) {
 		setTimeout(() => {
@@ -58,26 +50,26 @@ class Index extends React.Component {
 
 		var { hasMore, initializing, count, list } = this.state;
 		for (var i = 0; i < count; i++) {
-			list.push(<CardItem time="2017-12-18 09:36:00" />);
+			list.push(<CardItem key={i} time="2017-12-28 09:36:00" />);
 		}
 		return (
 			<div>
-				<ReactPullToRefresh onRefresh={this.handleRefresh.bind(this)} style={{ textAlign: 'center' }}>
-					<span className="genericon genericon-next"></span>
-					{/* top img S*/}
-					<div className="topimg">
-						<img src={weekImage} />
-					</div>
-					{/* top img E*/}
+				<span className="genericon genericon-next"></span>
+				{/* top img S*/}
+				<div className="topimg">
+					<img src={weekImage} />
+				</div>
+				{/* top img E*/}
 
-					{/* card S*/}
-					<div className="card">
-						<Tloader onLoadMore={this.loadMore.bind(this)} hasMore={hasMore} initializing={initializing}>
-							{list}
-						</Tloader>
-					</div>
-					{/* card E*/}
-				</ReactPullToRefresh>
+				{/* card S*/}
+				<div className="card">
+				<Tloader onLoadMore={this.loadMore.bind(this)} hasMore={hasMore} initializing={initializing}>
+				<QueueAnim delay={300} className="queue-simple">
+					{list}
+				</QueueAnim>
+				</Tloader>
+				</div>
+				{/* card E*/}
 			</div>
 		);
 	}

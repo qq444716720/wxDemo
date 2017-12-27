@@ -44,12 +44,12 @@
   color:#fff;
 }
 .card-price s{
-  padding: 0 20px;
+  padding: 0 10px;
   display: block;
 }
 .card-price span{
-  padding: 0 10px 5px 20px;
-  font-size: 18px;
+  padding: 0 10px 5px 10px;
+  font-size: 16px;
   color: orange;
   font-weight: 600;
 }
@@ -64,9 +64,9 @@
   background: orange;
   color: #fff;
   text-align: center;
-  height: 30px;
+  height: 40px;
+  width: 120px;
   border:none;
-  padding: 5px 20px 5px 20px;
   border-radius: 5px;
   position: absolute;
   right: 10px;
@@ -76,9 +76,9 @@
   bottom: 15px;
 }
 .card-stock{
-  width: 170px;
-  height:30px;
-  line-height: 30px;
+  width: 195px;
+  height:25px;
+  line-height: 25px;
   right:0;
   position: absolute;
   bottom:35px;
@@ -86,11 +86,11 @@
   font-size: 12px;
 }
 .bar{
-  background: #666;
-  width: 100px;
+  background: rgba(255,255,255,0.3);
+  width: 120px;
   height: 10px;
   float: right;
-  margin-top: 11px;
+  margin-top: 8px;
   margin-right: 10px;
   border-radius: 10px;
   position: relative;
@@ -106,4 +106,14 @@
 }
 .timeoutBut{
   background: #8c877e !important;
+}
+
+
+
+
+.change-btn{
+  background: #6adadb;
+}
+.change-col{
+  color: #6adadb;
 }

@@ -34,12 +34,15 @@ class ProductDetail extends React.Component {
 	}
 
     /**
-    * tab切换
+    * tab切换 滚动到相应锚点
     */
 	handleActive(id) {
 		this.setState({
 			currentIndex: id
 		});
+		// 滚动到相应div
+        let top = document.getElementById('d'+id).offsetTop-55;
+        window.scroll(0,top);
 	}
 
 	handleTime() {
@@ -101,13 +104,13 @@ class ProductDetail extends React.Component {
 				<div className="menu-containeer">
 					<Affix>
 						<ul>
-							<a onClick={this.handleActive.bind(this, 1)} href="#d1">
+							<a onClick={this.handleActive.bind(this, 1)}>
 								<li className={this.state.currentIndex == '1' ? 'active' : ''}>线路说明</li>
 							</a>
-							<a onClick={this.handleActive.bind(this, 2)} href="#d2">
+							<a onClick={this.handleActive.bind(this, 2)}>
 								<li className={this.state.currentIndex == '2' ? 'active' : ''}>费用说明</li>
 							</a>
-							<a onClick={this.handleActive.bind(this, 3)} href="#d3">
+							<a onClick={this.handleActive.bind(this, 3)}>
 								<li className={this.state.currentIndex == '3' ? 'active' : ''}>购买须知</li>
 							</a>
 						</ul>

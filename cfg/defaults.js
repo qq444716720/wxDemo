@@ -37,8 +37,10 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
       },
       {
-        test: /\.less/,
-        loader: 'style-loader!css-loader!less-loader'
+        test: /\.less$/,
+        loader: 'style!css!less'
+        // test: /\.less/,
+        // loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.styl/,

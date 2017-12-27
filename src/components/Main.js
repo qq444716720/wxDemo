@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Index from './Index.js';
 import ProductDetail from './ProductDetail.js';
 
@@ -10,10 +10,10 @@ class AppComponent extends React.Component {
     render() {
         return (
             <Router>
-                <div>
+                <Switch>
                     <Route exact path="/" component={Index} />
                     <Route path="/detail" component={ProductDetail} />
-                </div>
+                </Switch>
             </Router>
         )
     }

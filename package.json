@@ -68,6 +68,8 @@
     "less-loader": "^4.0.5",
     "normalize.css": "^4.0.0",
     "prop-types": "^15.6.0",
+    "rc-queue-anim": "^1.4.1",
+    "rc-tween-one": "^1.6.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-pull-to-refresh": "^1.1.1",

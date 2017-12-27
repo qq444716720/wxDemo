@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Index from './Index.js';
 import ProductDetail from './ProductDetail.js';
 import CalendarPrice from './CalendarPrice.js';
+import SubmitOrder from './SubmitOrder.js';
 
 class AppComponent extends React.Component {
 
@@ -14,6 +15,7 @@ class AppComponent extends React.Component {
                     <Route exact path="/" component={Index} />
                     <Route path="/detail" component={ProductDetail} />
                     <Route path="/calendarPrice" component={CalendarPrice} />
+                    <Route path="/order" component={SubmitOrder} />
                 </Switch>
             </Router>
         )

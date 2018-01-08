@@ -5,7 +5,7 @@ import { Toast } from 'antd-mobile';
 import Contact from '../member/Contact';
 import Tourist from '../member/Tourist';
 import 'antd-mobile/dist/antd-mobile.css';
-require('styles/route/SubmitRouteOrder.css');
+require('styles/route/SubmitRouteOrder.scss');
 
 class SubmitRouteOrder extends React.Component {
 
@@ -200,7 +200,7 @@ class SubmitRouteOrder extends React.Component {
 	render() {
 		
 		return (
-			<div>
+			<div className="submitRouteOrder">
 				{/*提交订单*/}
 				<div className="warpper">
 					<div className="content-top">

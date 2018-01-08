@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('styles/common/NoTiming.css');
+require('styles/common/NoTiming.scss');
 
 class NoTiming extends React.Component {
 

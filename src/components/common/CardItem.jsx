@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Timing from './Timing';
 import NoTiming from './NoTiming';
-require('styles/common/CardItem.css');
+require('styles/common/CardItem.scss');
 let rightImage = require('../../images/right.png');
 let rightImage2 = require('../../images/right2.png');
 let endrightImage = require('../../images/endright.png');

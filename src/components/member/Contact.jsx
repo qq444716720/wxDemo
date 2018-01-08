@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-require('styles/member/Contact.css')
+require('styles/member/Contact.scss')
 
 
 class Contact extends React.Component {

@@ -2,7 +2,6 @@ import React from 'react'
 import { NavBar, Icon , SwipeAction , List, Radio, Button, WhiteSpace, WingBlank, Toast } from 'antd-mobile';
 import { Link } from 'react-router-dom';
 import QueueAnim from 'rc-queue-anim';
-require('styles/member/SelectContact.css');
 
 const RadioItem = Radio.RadioItem;
 

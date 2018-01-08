@@ -6,7 +6,7 @@ import Timing from '../common/Timing';
 import RouteDetail from '../route/RouteDetail';
 import TicketDetail from '../ticket/TicketDetail';
 
-require('styles/common/Detail.css');
+require('styles/common/Detail.scss');
 
 let clockImage = require('../../images/time_20171205143720.png');
 let kefuImage = require('../../images/kefu_20171205143725.png');
@@ -72,7 +72,7 @@ class ProducttDetail extends React.Component {
 		}
 
 		return (
-			<div>
+			<div className="producttDetail">
 				<div>
 					<div className="swiper">
 						<Carousel {...settings}>

@@ -2,7 +2,7 @@ import React from 'react';
 import CardItem from './common/CardItem';
 import Tloader from 'react-touch-loader';
 import QueueAnim from 'rc-queue-anim';
-require('styles/Index.css');
+require('styles/Index.scss');
 
 let weekImage = require('../images/week.png');
 
@@ -66,7 +66,7 @@ class Index extends React.Component {
 
 		let { hasMore, initializing } = this.state;
 		return (
-			<div>
+			<div className="index">
 				{/* 头部背景 */}
 				<div className="topimg">
 					<img src={weekImage} />

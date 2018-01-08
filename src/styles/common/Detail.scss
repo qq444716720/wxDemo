@@ -1,0 +1,281 @@
+.producttDetail{
+  body {
+    background: #F2F2F2;
+  }
+  .swiper{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    img{
+      height: 150px;
+      width: 100%;
+    }
+  }
+  .price-container{
+    float: left;
+    background: #6ADADB;
+    color: #fff;
+    width: 55%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    img{
+      width: 23px;
+      margin-left: 3px;
+      margin-top: -5px;
+      vertical-align: middle;
+    }
+    .medium{
+      height: 35px;
+      font-size: 12px;
+    }
+  }
+  .time-container{
+    width: 45%;
+    height: 45px;
+    font-weight: 600;
+    line-height: 45px;
+    float: left;
+    background: #fff;
+  }
+  .dwell{
+    float: left;
+    width: 55%;
+  }
+  .original{
+    float: left;
+    width: 45%;
+    font-size: 12px;
+  }
+  .pdiv{
+    height: 45px;
+    width: 100%;
+  }
+  
+  .original{
+    div{
+      width: 100%;
+      margin-left: 5px;
+    }
+  }
+  .original-title{
+    position: relative;
+    top: -8px;
+  }
+  .original-price{
+    position: relative;
+    top: -35px;
+    font-size: 13px;
+  }
+  .small{
+    font-size: 12px;
+  }
+  .route-name{
+    margin-top: 10px;
+    height: 60px;
+    background: #fff;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .route-name{
+    span{
+      width: 70%;
+      display: inline-block;
+      margin: 8px;
+    }
+  }
+  .menu-containeer{
+    border: 1px solid #F3F3F3;
+    width: 100%;
+    ul{
+      width: 100%;
+      height: 45px;
+      background: #fff;
+      text-align: center;
+      line-height: 45px;
+      padding: 0;
+      li{
+        list-style: none;
+        float: left;
+        width: 33.3%;
+        height: 45px;
+      }
+    }
+    a{
+      color: #000;
+    }
+  }
+  .active{
+    background: #FCE8D0;
+    color: #FDB143;
+    border-bottom: 1px solid #FDB143;
+  }
+  
+  .content{
+    padding: 15px;
+    background: #fff;
+    .title{
+      span{
+        border-left: 3px solid #FF9C00;
+        margin-right: 5px;
+      }
+    }
+  }
+  .cde{
+    padding: 10px;
+    span{
+      color: #FF9C00;
+      margin-right: 5px;
+    }
+    p{
+      padding: 0 5px;
+    }
+  }
+  .foot{
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+    height: 55px;
+    width: 100%;
+    .left{
+      width: 20%;
+      float: left;
+      text-align: center;
+      padding: 3px;
+      img{
+        height: 30px;
+      }
+      span{
+        color: #6ADADB;
+      }
+    }
+    .right{
+      float: left;
+      width: 80%;
+      text-align: center;
+      line-height: 55px;
+      font-size: 14px;
+      color: #fff;
+      background: #6ADADB;
+    }
+  }
+  .timeoutBuy{
+    float: left;
+    width: 80%;
+    text-align: center;
+    line-height: 55px;
+    font-size: 14px;
+    color: #fff;
+    background: #8c877e;
+  }
+  ul{
+    list-style: none;
+  }
+  .xlts-title {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .section-feature-title {
+    margin-bottom: 10px;
+    color: #111;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+  }
+  pre {
+    margin-bottom: 5px;
+    line-height: 20px;
+    text-align: justify;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  .cpts_li {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .cpts_pic_con {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    text-align: left;
+  }
+  .city_pic_image {
+    width: 100%;
+    height: 100%;
+  }
+  .day-hd {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+  .daynum {
+    width: 60px;
+    line-height: 1;
+    font-size: 30px;
+    color: #47c1d0;
+  }
+  .dayname {
+    width: auto;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  .day-bd {
+    margin-bottom: 10px;
+  }
+  .marginB {
+    margin: 0 10px 0px;
+  }
+  .hg {
+    font-weight: 700;
+  }
+  .tripdays{
+    .city_pic{
+      li {
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .mealsTable {
+    color: #333;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .tablePic {
+    width: 2.5rem;
+  }
+  .costI {
+    float: left;
+    display: inline;
+    height: 15px;
+    width: 4px;
+    margin: 3px 10px 0 0;
+    font-size: 0;
+    line-height: 0;
+    background-color: #47c1d0;
+  }
+  .includeCost{
+    margin-bottom: 15px;
+  }
+}
+

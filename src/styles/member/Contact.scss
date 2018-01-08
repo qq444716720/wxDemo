@@ -1,0 +1,31 @@
+.contact{
+    padding: 10px;
+    .top{
+        height: 45px;
+        line-height: 45px;
+        border-bottom: 1px solid #EEEEEE;
+        .title{
+            float: left;
+            font-weight: 800;
+            font-size: 16px;
+        }
+        .select{
+            float: right;
+            margin-top: 8px;
+            height: 30px;
+            padding: 0 5px;
+            line-height: 30px;
+            border: 1px solid #69D5EE;
+            color: #69D5EE;
+        }
+    }
+    .item{
+        height: 45px;
+        line-height:45px;
+        border-bottom: 1px solid #eee;
+    }
+    .person-name{
+        width: 70%;
+        border:none;
+    }
+}

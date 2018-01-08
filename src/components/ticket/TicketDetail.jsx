@@ -2,7 +2,7 @@ import React from 'react';
 import { Toast, Accordion, List } from 'antd-mobile';
 import 'antd/dist/antd.css';
 
-require('styles/ticket/TicketDetail.css');
+require('styles/ticket/TicketDetail.scss');
 
 class TicketDetail extends React.Component {
 

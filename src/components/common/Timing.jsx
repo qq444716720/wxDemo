@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('styles/common/Timing.css');
+require('styles/common/Timing.scss');
 
 class Timing extends React.Component {
 

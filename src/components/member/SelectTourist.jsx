@@ -30,7 +30,7 @@ class SelectTourist extends React.Component {
         Toast.loading('Loading...', 0, () => {
 			console.log('Load complete !!!');
 		});
-        fetch('http://127.0.0.1:8001/member/tourist/tourist_getTourist.do', {
+        fetch('http://192.168.70.238:8001/member/tourist/tourist_getTourist.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 		}).then(response => response.json()).then(json => {
@@ -118,7 +118,7 @@ class SelectTourist extends React.Component {
                                             Toast.loading('请稍后...', 0, () => {
                                                 console.log('Load complete !!!');
                                             });
-                                            fetch('http://127.0.0.1:8001/member/tourist/tourist_deleteTourist.do', {
+                                            fetch('http://192.168.70.238:8001/member/tourist/tourist_deleteTourist.do', {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                                                 body: 'touristId=' + item.touristId
@@ -134,7 +134,7 @@ class SelectTourist extends React.Component {
                                                     }
                                                     localStorage.setItem('selectedContactsId', selectedTouristIds);
                                                     // 重新渲染
-                                                    fetch('http://127.0.0.1:8001/member/tourist/tourist_getTourist.do', {
+                                                    fetch('http://192.168.70.238:8001/member/tourist/tourist_getTourist.do', {
                                                         method: 'POST',
                                                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                                                     }).then(response => response.json()).then(json => {

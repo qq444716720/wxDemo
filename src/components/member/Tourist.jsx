@@ -29,7 +29,7 @@ class Tourist extends React.Component {
 
     componentDidMount() {
         let touristIds = localStorage.getItem('selectedTouristIds');
-        fetch('http://127.0.0.1:8001/member/tourist/tourist_getTourist.do', {
+        fetch('http://192.168.70.238:8001/member/tourist/tourist_getTourist.do', {
 			method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: 'touristId=' + touristIds

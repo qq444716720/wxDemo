@@ -47,7 +47,7 @@ class SubmitRouteOrder extends React.Component {
 			priceDate = '';
 		}
 		
-		fetch('http://127.0.0.1:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
+		fetch('http://192.168.70.238:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'goodsPromotionId=' + goodsPromotionId
@@ -57,7 +57,7 @@ class SubmitRouteOrder extends React.Component {
 				promotionName: json.promotionBase.promotionName,
 				goodsId: json.promotionBase.goodsId
 			});
-			fetch('http://127.0.0.1:8001/sale/promotion/price_getPromotionPriceOne.do', {
+			fetch('http://192.168.70.238:8001/sale/promotion/price_getPromotionPriceOne.do', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: 'goodsPromotionId=' + goodsPromotionId + '&priceDate=' + priceDate

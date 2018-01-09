@@ -19,7 +19,7 @@ class Contact extends React.Component {
         if(!contactsId){
             contactsId = '';
         }
-        fetch('http://127.0.0.1:8001/member/contacts/contacts_getContactsOne.do', {
+        fetch('http://192.168.70.238:8001/member/contacts/contacts_getContactsOne.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'contactsId=' + contactsId

@@ -28,7 +28,7 @@ class RouteDetail extends React.Component {
 		Toast.loading('Loading...', 0, () => {
 			console.log('Load complete !!!');
 		});
-		fetch('http://127.0.0.1:8001/sale/route/route_baseInfo.do', {
+		fetch('http://192.168.70.238:8001/sale/route/route_baseInfo.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'goodsRouteId=' + this.props.goodsId

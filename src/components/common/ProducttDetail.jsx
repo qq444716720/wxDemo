@@ -26,7 +26,7 @@ class ProducttDetail extends React.Component {
 
 	componentDidMount() {
 		const { goodsPromotionId, goodsType } = this.props.match.params;
-		fetch('http://127.0.0.1:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
+		fetch('http://192.168.70.238:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'goodsPromotionId=' + goodsPromotionId + '&goodsType=' + goodsType
@@ -37,7 +37,7 @@ class ProducttDetail extends React.Component {
 			});
 		});
 
-		fetch('http://127.0.0.1:8001/sale/promotion/price_getPromotionPriceList.do', {
+		fetch('http://192.168.70.238:8001/sale/promotion/price_getPromotionPriceList.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'goodsPromotionId=' + goodsPromotionId

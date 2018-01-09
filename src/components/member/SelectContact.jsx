@@ -19,7 +19,7 @@ class SelectContact extends React.Component {
         Toast.loading('Loading...', 0, () => {
 			console.log('Load complete !!!');
 		});
-        fetch('http://127.0.0.1:8001/member/contacts/contacts_getContactsList.do', {
+        fetch('http://192.168.70.238:8001/member/contacts/contacts_getContactsList.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 			// body: 'goodsPromotionId=' + goodsPromotionId + '&goodsType=' + goodsType
@@ -69,7 +69,7 @@ class SelectContact extends React.Component {
                                             Toast.loading('请稍后...', 0, () => {
                                                 console.log('Load complete !!!');
                                             });
-                                            fetch('http://127.0.0.1:8001/member/contacts/contacts_deleteContacts.do', {
+                                            fetch('http://192.168.70.238:8001/member/contacts/contacts_deleteContacts.do', {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                                                 body: 'contactsId=' + item.contactsId
@@ -83,7 +83,7 @@ class SelectContact extends React.Component {
                                                         });
                                                     }
                                                     // 重新渲染
-                                                    fetch('http://127.0.0.1:8001/member/contacts/contacts_getContactsList.do', {
+                                                    fetch('http://192.168.70.238:8001/member/contacts/contacts_getContactsList.do', {
                                                         method: 'POST',
                                                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                                                     }).then(response => response.json()).then(json => {

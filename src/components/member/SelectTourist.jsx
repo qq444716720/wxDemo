@@ -1,6 +1,7 @@
 import React from 'react'
 import { Toast, NavBar, Icon , SwipeAction , List, Checkbox, Button, WhiteSpace, WingBlank, Badge } from 'antd-mobile';
 import { Link } from 'react-router-dom';
+import QueueAnim from 'rc-queue-anim';
 
 const CheckboxItem = Checkbox.CheckboxItem;
 let childrenSet = new Set();
@@ -28,9 +29,9 @@ class SelectTourist extends React.Component {
 
     componentDidMount() {
         Toast.loading('Loading...', 0, () => {
-			console.log('Load complete !!!');
+			// console.log('Load complete !!!');
 		});
-        fetch('http://192.168.70.238:8001/member/tourist/tourist_getTourist.do', {
+        fetch('http://192.168.70.43:8001/member/tourist/tourist_getTourist.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 		}).then(response => response.json()).then(json => {
@@ -106,6 +107,7 @@ class SelectTourist extends React.Component {
                     ]}
                 >请选择出行人</NavBar>
                 <List renderHeader={() => `请选择${adultNum}位成人,${childrenNum}位儿童`}>
+                    <QueueAnim delay={300} className="queue-simple">
                     {
                         this.state.json.map((item) => (
                             <SwipeAction key={item.touristId}
@@ -116,9 +118,9 @@ class SelectTourist extends React.Component {
                                         text: '删除',
                                         onPress: () => {
                                             Toast.loading('请稍后...', 0, () => {
-                                                console.log('Load complete !!!');
+                                                // console.log('Load complete !!!');
                                             });
-                                            fetch('http://192.168.70.238:8001/member/tourist/tourist_deleteTourist.do', {
+                                            fetch('http://192.168.70.43:8001/member/tourist/tourist_deleteTourist.do', {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                                                 body: 'touristId=' + item.touristId
@@ -134,7 +136,7 @@ class SelectTourist extends React.Component {
                                                     }
                                                     localStorage.setItem('selectedContactsId', selectedTouristIds);
                                                     // 重新渲染
-                                                    fetch('http://192.168.70.238:8001/member/tourist/tourist_getTourist.do', {
+                                                    fetch('http://192.168.70.43:8001/member/tourist/tourist_getTourist.do', {
                                                         method: 'POST',
                                                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                                                     }).then(response => response.json()).then(json => {
@@ -177,6 +179,7 @@ class SelectTourist extends React.Component {
                             </SwipeAction>
                         ))
                     }
+                    </QueueAnim>
                     <WhiteSpace />
                     <WhiteSpace />
                     <WhiteSpace />

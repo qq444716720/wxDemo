@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Toast } from 'antd-mobile';
 import Contact from '../member/Contact';
 import Tourist from '../member/Tourist';
-import 'antd-mobile/dist/antd-mobile.css';
+// import 'antd-mobile/dist/antd-mobile.css';
 require('styles/route/SubmitRouteOrder.scss');
 
 class SubmitRouteOrder extends React.Component {
@@ -40,14 +40,14 @@ class SubmitRouteOrder extends React.Component {
 
 	componentDidMount() {
 		Toast.loading('Loading...', 0, () => {
-			console.log('Load complete !!!');
+			// console.log('Load complete !!!');
 		});
 		let { goodsPromotionId, priceDate } = this.props.match.params;
 		if(priceDate == 0){
 			priceDate = '';
 		}
 		
-		fetch('http://192.168.70.238:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
+		fetch('http://192.168.70.43:8001/sale/promotion/promotion_getPromotionBaseInfo.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: 'goodsPromotionId=' + goodsPromotionId
@@ -57,7 +57,7 @@ class SubmitRouteOrder extends React.Component {
 				promotionName: json.promotionBase.promotionName,
 				goodsId: json.promotionBase.goodsId
 			});
-			fetch('http://192.168.70.238:8001/sale/promotion/price_getPromotionPriceOne.do', {
+			fetch('http://192.168.70.43:8001/sale/promotion/price_getPromotionPriceOne.do', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: 'goodsPromotionId=' + goodsPromotionId + '&priceDate=' + priceDate

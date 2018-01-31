@@ -62,7 +62,7 @@ class CardItem extends React.Component {
 							:
 							<span style={{color: '#6adadb'}}>限时抢购：￥{promotionPrice}</span>
 						}
-						
+
 					</div>
 					<div className="card-btn">
 						{
@@ -110,7 +110,7 @@ class CardItem extends React.Component {
 									</div>
 								</div>
 							}
-							
+
 						</div>
 						<div className="card-time">
 							{

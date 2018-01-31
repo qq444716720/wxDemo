@@ -10,9 +10,22 @@ let defaultSettings = require('./defaults');
 let BowerWebpackPlugin = require('bower-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
-  entry: path.join(__dirname, '../src/index'),
+  // entry: path.join(__dirname, '../src/index'),
+  entry :{
+    app: path.join(__dirname, '../src/index'),
+    vendor: ['antd-mobile'],
+    antd: ['antd'],
+    common: ['react','react-dom','react-router','moment']
+  },
+  output: { // 覆盖bese的输出
+    path: path.join(__dirname, '/../dist/assets'),
+    filename: '[name].js',
+    publicPath: '.'+defaultSettings.publicPath,
+    // chunkFilename: path.join(__dirname, '/../dist/assets/[name].js')
+    chunkFilename: '[name].js'
+  },
   cache: false,
-  devtool: 'sourcemap',
+  devtool: 'false', // false 或者 cheap-module-source-map
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
@@ -21,10 +34,20 @@ let config = Object.assign({}, baseConfig, {
     new BowerWebpackPlugin({
       searchResolveModulesDirectories: false
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false //去掉注释
+      },
+      compress: {
+        warnings: false //去掉警告
+      }
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor','antd','common']
+    })
   ],
   module: defaultSettings.getDefaultModules()
 });

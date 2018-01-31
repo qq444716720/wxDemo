@@ -112,7 +112,7 @@ class UpdateContact extends React.Component {
                                     Toast.fail('请填写正确的信息', 1);
                                 }else{
                                     Toast.loading('正在保存...', 0, () => {
-                                        console.log('Load complete !!!');
+                                        // console.log('Load complete !!!');
                                     });
                                     fetch(`http://127.0.0.1:8001/member/contacts/contacts_${action}.do`, {
                                         method: 'POST',

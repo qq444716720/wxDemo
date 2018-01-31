@@ -17,9 +17,9 @@ class SelectContact extends React.Component {
     
     componentDidMount() {
         Toast.loading('Loading...', 0, () => {
-			console.log('Load complete !!!');
+			// console.log('Load complete !!!');
 		});
-        fetch('http://192.168.70.238:8001/member/contacts/contacts_getContactsList.do', {
+        fetch('http://192.168.70.43:8001/member/contacts/contacts_getContactsList.do', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 			// body: 'goodsPromotionId=' + goodsPromotionId + '&goodsType=' + goodsType
@@ -37,7 +37,7 @@ class SelectContact extends React.Component {
         })
     };
 
-    render() {      
+    render() {
         return (
             <div className="select-contact">
                 <NavBar
@@ -67,9 +67,9 @@ class SelectContact extends React.Component {
                                         text: '删除',
                                         onPress: () => {
                                             Toast.loading('请稍后...', 0, () => {
-                                                console.log('Load complete !!!');
+                                                // console.log('Load complete !!!');
                                             });
-                                            fetch('http://192.168.70.238:8001/member/contacts/contacts_deleteContacts.do', {
+                                            fetch('http://192.168.70.43:8001/member/contacts/contacts_deleteContacts.do', {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                                                 body: 'contactsId=' + item.contactsId
@@ -83,7 +83,7 @@ class SelectContact extends React.Component {
                                                         });
                                                     }
                                                     // 重新渲染
-                                                    fetch('http://192.168.70.238:8001/member/contacts/contacts_getContactsList.do', {
+                                                    fetch('http://192.168.70.43:8001/member/contacts/contacts_getContactsList.do', {
                                                         method: 'POST',
                                                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                                                     }).then(response => response.json()).then(json => {

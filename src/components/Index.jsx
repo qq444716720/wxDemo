@@ -21,7 +21,7 @@ class Index extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('http://192.168.70.238:8001/sale/promotion/promotion_getPromotionBaseList.do', {
+		fetch('http://192.168.70.43:8001/sale/promotion/promotion_getPromotionBaseList.do', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body:'pageIndex='+this.state.count
@@ -43,7 +43,7 @@ class Index extends React.Component {
 
 
 	loadMore(resolve) {
-		fetch('http://192.168.70.238:8001/sale/promotion/promotion_getPromotionBaseList.do', {
+		fetch('http://192.168.70.43:8001/sale/promotion/promotion_getPromotionBaseList.do', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body:'pageIndex='+(this.state.count+1)

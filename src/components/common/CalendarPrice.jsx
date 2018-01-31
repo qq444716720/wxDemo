@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar, Toast } from 'antd-mobile';
-import 'antd-mobile/dist/antd-mobile.css';
+// import 'antd-mobile/dist/antd-mobile.css';
 import moment from 'moment';
 
 const extra = {
@@ -11,9 +11,9 @@ const temp = {};
 
 // 今天之前的日期
 const now = new Date();
-for (var i = now.getDate()-1; i > 0; i--) {
-	extra[+new Date(now.getFullYear(), now.getMonth(), i)] = { disable: true };
-}
+// for (var i = now.getDate()-1; i > 0; i--) {
+// 	extra[+new Date(now.getFullYear(), now.getMonth(), i)] = { disable: true };
+// }
 let datePriceJson = JSON.parse(localStorage.getItem('datePriceJson'));
 class CalendarPrice extends React.Component {
 	
@@ -30,7 +30,7 @@ class CalendarPrice extends React.Component {
 	}
 	
 	onSelectHasDisableDate = (dates) => {
-		console.warn('onSelectHasDisableDate', dates);
+		// console.warn('onSelectHasDisableDate', dates);
 	}
 	
 	componentDidMount() {
@@ -67,7 +67,7 @@ class CalendarPrice extends React.Component {
 					  defaultTimeValue={now}
 					  onConfirm={this.onConfirm.bind(this)}
 					  onCancel={this.onCancel.bind(this)}
-			          minDate={new Date(+now - 5184000000)}
+			          minDate={new Date(+now)}
 			          maxDate={new Date(+now + 31536000000)}
 			        />
 			</div>

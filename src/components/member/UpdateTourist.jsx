@@ -134,7 +134,7 @@ class UpdateTourist extends React.Component {
                 const { type } = this.props.match.params;
                 if(type === 'update'){
                     let item = JSON.parse(localStorage.getItem('editorTourist'));
-                    console.log(cardIdArr[BUTTONS[buttonIndex]])
+                    // console.log(cardIdArr[BUTTONS[buttonIndex]])
                     this.setState({
                         cardId: item[cardIdArr[BUTTONS[buttonIndex]]]
                     });
@@ -253,7 +253,7 @@ class UpdateTourist extends React.Component {
                                     body += `&firstName=${firstName}&lastName=${lastName}`;
                                 }
                                 Toast.loading('正在保存...', 0, () => {
-                                    console.log('Load complete !!!');
+                                    // console.log('Load complete !!!');
                                 });
                                 fetch(`http://rap.taobao.org/mockjs/30890/tourist/tourist_${this.state.action}.do`, {
                                     method: 'POST',
